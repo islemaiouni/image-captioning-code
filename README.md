@@ -44,6 +44,62 @@ Simply paste the GitHub notebook link into Nbviewer to see full results with out
 
 ---
 
-## 🎯 Goal
+## 📊 Results
 
+| Model            | BLEU-4 Score |Clider     Rougl
+|-------------------|-------------|---------|-------------|
+| CNN + LSTM        | 0.29        |0.31     |0.29
+| CNN + Transformer | 0.29      |0.38       |0.41
+## 🚀 Future Work
+
+- Train on larger dataset (Flickr30k or MSCOCO)
+- Improve Transformer architecture
+- Add attention visualization
+- Deploy model as a web app
+
+  ## ⚖️ Comparison
+
+- LSTM is sequential and slower
+- Transformer uses attention and performs better on long context
+- Transformer produces more accurate and fluent captions
+
+To enhance the understanding of images, we designed a **fusion strategy** that combines the output of the image captioning model with the emotion recognition model.
+
+---
+
+### 🧠 Idea
+
+Instead of treating caption generation and emotion detection separately, we merge both outputs to produce a **context-aware description of the image**.
+
+## 🔗 Caption–Emotion Fusion Example
+
+To clearly show the benefit of the fusion module, we compare the caption output **with and without emotion integration**.
+
+---
+
+### ❌ Without Emotion (Basic Captioning Output)
+
+- Caption: *"A child playing in a park"*
+
+👉 This output only describes the scene without any emotional context.
+
+---
+
+### 😊 With Emotion (Fusion Output)
+
+- Caption: *"A child playing in a park"*
+- Emotion: 😊 Happy
+
+👉 Final Fusion Result:
+> "A happy child playing in a park"
+
+---
+
+### 🎯 Key Difference
+
+- Without emotion → only **visual description**
+- With emotion → **description + emotional context**
+
+This makes the generated sentence more natural, expressive, and closer to human perception.
+## 🎯 Goal
 To study and compare the performance of **RNN-based (LSTM)** vs **Attention-based (Transformer)** models in image caption generation.
